@@ -8,9 +8,16 @@ pluginManagement {
 }
 plugins {
     id("com.fueledbycaffeine.spotlight") version "1.4.1"
+    id("com.gradle.develocity") version "4.3"
 }
 rootProject.name = "kgp-2.3.20"
-
+develocity {
+    server = "https://ge.solutions-team.gradle.com/"
+    allowUntrustedServer = true
+    buildScan {
+        uploadInBackground.set(false)
+    }
+}
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
